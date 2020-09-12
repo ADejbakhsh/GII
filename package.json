@@ -1,0 +1,27 @@
+{
+    "name": "graphgii",
+    "displayName": "GraphGII",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "ADejbakh",
+    "repository": "https://github.com/ADejbakhsh/GII.git",
+    "engines": {
+        "vscode": "^1.49.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "GII",
+            "aliases": ["graph.txt", "GII"],
+            "extensions": [".txt"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "GII",
+            "scopeName": "source.txt",
+            "path": "./syntaxes/GII.tmLanguage.json"
+        }]
+    }
+}

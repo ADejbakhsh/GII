@@ -1,0 +1,32 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "graph.txt",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.GII",
+				"match": "\\b(GRAPH|GRAPH_DESC|GRAPH_DESC2|GRAPH_DIM|GRAPH_EVAL|GRAPH_EVAL_BEFORE|GRAPH_EXP|GRAPH_TOP_BOTTOM|GRAPH_TYPE)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.GII",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.GII",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.txt"
+}
