@@ -52,12 +52,10 @@
     },
     "entity": {
       "name": "entity.name.function.GII",
-      "begin": "GRAPH_",
-      "end": ":",
       "patterns": [
         {
           "name": "entity.name.function.GII",
-          "match": "^GRAPH_.*:"
+          "match": "^GRAPH_[a-zA-Z]{0,}"
         }
       ]
     }
