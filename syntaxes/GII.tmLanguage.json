@@ -16,6 +16,9 @@
     },
     {
       "include": "#constant"
+    },
+    {
+      "include": "#markup"
     }
   ],
   "repository": {
@@ -56,6 +59,24 @@
         {
           "name": "entity.name.function.GII",
           "match": "^GRAPH_[a-zA-Z]{0,}"
+        }
+      ]
+    },
+    "constant": {
+      "name": "constant.GII",
+      "patterns": [
+        {
+          "name": "constant.language.GII",
+          "match": "^INDIC_[a-zA-Z]{0,}"
+        }
+      ]
+    },
+    "markup": {
+      "name": "markup.heading.gii",
+      "patterns": [
+        {
+          "name": "markup.heading.gii",
+          "match": "^INDIC:"
         }
       ]
     }
