@@ -10,14 +10,21 @@
     },
     {
       "include": "#comment"
+    },
+    {
+      "include": "#entity"
+    },
+    {
+      "include": "#constant"
     }
   ],
   "repository": {
     "keywords": {
+      "name": "keyword.control.gii",
       "patterns": [
         {
-          "name": "keyword.control.GII",
-          "match": "\\b(GRAPH|GRAPH_DESC|GRAPH_DESC2|GRAPH_DIM|GRAPH_EVAL|GRAPH_EVAL_BEFORE|GRAPH_EXP|GRAPH_TOP_BOTTOM|GRAPH_TYPE)\\b"
+          "name": "keyword.control.gii",
+          "match": "\\b(GRAPH|END)\\b"
         }
       ]
     },
@@ -33,13 +40,24 @@
       ]
     },
     "comment": {
-      "name": "comment.line.percentage.GII",
+      "name": "comment.block.GII",
       "begin": "#",
       "end": "$",
       "patterns": [
         {
-          "name": "comment.line.double-slash.GII",
+          "name": "comment.block.GII",
           "match": "#.*$"
+        }
+      ]
+    },
+    "entity": {
+      "name": "entity.name.function.GII",
+      "begin": "GRAPH_",
+      "end": ":",
+      "patterns": [
+        {
+          "name": "entity.name.function.GII",
+          "match": "^GRAPH_.*:"
         }
       ]
     }
