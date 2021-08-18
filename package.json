@@ -16,10 +16,6 @@
     "languages": [
       {
         "id": "GII",
-        "aliases": [
-          "graph.txt",
-          "GII"
-        ],
         "extensions": [
           ".txt"
         ],
@@ -32,7 +28,12 @@
         "scopeName": "source.txt",
         "path": "./src/syntaxes/GII.tmLanguage.json"
       }
-    ]
+    ],
+    "configurationDefaults": {
+      "[GII]": {
+        "editor.wordBasedSuggestions": false
+      }
+    }
   },
   "activationEvents": [
     "*"
