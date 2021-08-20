@@ -2,17 +2,23 @@ import path = require('path');
 import * as vscode from 'vscode';
 
 export class Graph {
-  static async exp(document: vscode.TextDocument): Promise<Array<vscode.CompletionItem>> {
 
-    console.log('provideCompletionItems');
+  // return all the expression revelant to the context
+  static async exp(document: vscode.TextDocument): Promise<Array<vscode.CompletionItem>> {
     const expressionPath = path.parse(document.uri.fsPath).dir + '/expressions.txt';
     const expression = await vscode.workspace.openTextDocument(expressionPath);
     const text = expression.getText();
     const listExpressions = text.match(/^[a-zA-Z_0-9]*=/mg) || [];
 
     const array: Array<vscode.CompletionItem> = [];
+
     listExpressions.every((item) => {
-      array.push(new vscode.CompletionItem(item, vscode.CompletionItemKind.Method));
+      // remove equal signe at the end of the string
+      const exp = item.substring(0, item.length - 1);
+      const completionItem = new vscode.CompletionItem(exp);
+      completionItem.kind = vscode.CompletionItemKind.Method;
+
+      array.push(completionItem);
       return true;
     });
 
