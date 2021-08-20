@@ -1,8 +1,6 @@
-/*---------------------------------------------------------
- * Copyright (C) Microsoft Corporation. All rights reserved.
- *--------------------------------------------------------*/
 import path = require('path');
 import * as vscode from 'vscode';
+import { Graph } from './controller/graph';
 
 export function activate(context: vscode.ExtensionContext) {
 
@@ -29,19 +27,7 @@ export function activate(context: vscode.ExtensionContext) {
       const linePrefix = document.lineAt(position).text.substr(0, position.character);
 
       if (/^GRAPH_EXP/.test(linePrefix)) {
-        console.log('provideCompletionItems');
-        const expressionPath = path.parse(document.uri.fsPath).dir + '/expressions.txt';
-        const expression = await vscode.workspace.openTextDocument(expressionPath);
-        const text = expression.getText();
-        const listExpressions = text.match(/^[a-zA-Z_0-9]*=/mg) || [];
-
-        const array: Array<vscode.CompletionItem> = [];
-        listExpressions.every((item) => {
-          array.push(new vscode.CompletionItem(item, vscode.CompletionItemKind.Method));
-          return true;
-        });
-
-        return array;
+        return await Graph.exp(document);
 
       } else if (linePrefix.endsWith('console.')) {
 
