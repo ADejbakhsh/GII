@@ -14,7 +14,6 @@ export class Graph {
       } catch (e) {
         return [];
       }
-      console.log(expressionPath, expression);
       const text = expression.getText();
       const listExpressions = text.match(/^[a-zA-Z_0-9]*=/mg) || [];
 
