@@ -1,5 +1,8 @@
 Support for gii custom language
 
+## [0.1.2] - 23-08-2021
+- auto completion on graph exp from expression files
+
 ## [0.0.5] - 06-08-2021
 - GRAPH_TYPE now show list of available graphs
 
