@@ -8,7 +8,7 @@ export class Graph {
 
     const mapResult = ['/expressions.txt', '/expressions_fct.txt'].map(async (expressionFile): Promise<Array<vscode.CompletionItem>> => {
       const expressionPath = path.parse(document.uri.fsPath).dir + expressionFile;
-      let expression;
+      let expression: vscode.TextDocument;
       try {
         expression = await vscode.workspace.openTextDocument(expressionPath);
       } catch (e) {
