@@ -36,4 +36,32 @@ export class Graph {
 
     return result[0].concat(result[1]);
   }
+
+  static eval(document: vscode.TextDocument): Array<vscode.CompletionItem> {
+    const listExpressions = [
+      'GLOBAL',
+      'LAST_CHART_DESC',
+      'delete',
+      'for',
+      'setCallback',
+      'setCallbackN',
+      'setShowExpressions',
+      'setSmartTotal',
+      'setStaticWhereSuffix',
+      'setTotalExpressions',
+      'setWeightExpressions'];
+
+    const array: Array<vscode.CompletionItem> = [];
+
+    listExpressions.every((item) => {
+      const completionItem = new vscode.CompletionItem(item);
+      completionItem.kind = vscode.CompletionItemKind.Method;
+
+      array.push(completionItem);
+      return true;
+    });
+
+    return array;
+
+  }
 }
