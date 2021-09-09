@@ -1,6 +1,11 @@
 import path = require('path');
 import * as vscode from 'vscode';
+import last_chart_desc  from '@constante/last_chart_desc';
 
+interface listExpressionsT {
+  item: string,
+  desc: string,
+}
 export class Graph {
 
   // return all the expression revelant to the context
@@ -37,9 +42,9 @@ export class Graph {
     return result[0].concat(result[1]);
   }
 
-  static eval(document: vscode.TextDocument): Array<vscode.CompletionItem> {
+  static eval(): Array<vscode.CompletionItem> {
     const listExpressions = [
-      'GLOBAL',
+      'GLOBAL.graphFns',
       'LAST_CHART_DESC',
       'delete',
       'for',
@@ -51,17 +56,29 @@ export class Graph {
       'setTotalExpressions',
       'setWeightExpressions'];
 
+    return Graph.completionItem(listExpressions);
+  }
+
+  static lastChartDesc(): Array<vscode.CompletionItem> {
+    const vscC = vscode.CompletionItemKind;
+    let listExpressions = last_chart_desc;
+
+    return Graph.completionItem(listExpressions);
+  }
+
+  static completionItem(listExpressions: listExpressionsT[]): vscode.CompletionItem[] {
     const array: Array<vscode.CompletionItem> = [];
 
-    listExpressions.every((item) => {
-      const completionItem = new vscode.CompletionItem(item);
+    listExpressions.every((expression) => {
+      const completionItem = new vscode.CompletionItem(expression.item);
       completionItem.kind = vscode.CompletionItemKind.Method;
+      completionItem.documentation = new vscode.MarkdownString(expression.desc);
+
 
       array.push(completionItem);
       return true;
     });
 
     return array;
-
   }
 }

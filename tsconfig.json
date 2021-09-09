@@ -8,7 +8,12 @@
     "outDir": "out",
     "sourceMap": true,
     "strict": true,
-    "rootDir": "src/completions"
+    "rootDir": "src/completions",
+    "paths": {
+      "@constante/*": [
+        "./src/completions/constante/*"
+      ],
+    }
   },
   "exclude": [
     "node_modules",
