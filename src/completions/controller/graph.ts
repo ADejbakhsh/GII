@@ -1,10 +1,11 @@
 import path = require('path');
 import * as vscode from 'vscode';
 import last_chart_desc from '../constante/last_chart_desc';
+import query_desc from '../constante/query_desc';
 
 interface listExpressionsT {
   item: string,
-  desc: string,
+  desc: string | undefined,
 }
 export class Graph {
 
@@ -98,13 +99,21 @@ export class Graph {
 
   }
 
+  static query(): Array<vscode.CompletionItem> {
+    return Graph.completionItem(query_desc);
+  }
+
   static completionItem(listExpressions: listExpressionsT[]): vscode.CompletionItem[] {
     const array: Array<vscode.CompletionItem> = [];
 
     listExpressions.every((expression) => {
       const completionItem = new vscode.CompletionItem(expression.item);
       completionItem.kind = vscode.CompletionItemKind.Method;
-      completionItem.documentation = new vscode.MarkdownString(expression.desc);
+      if (expression.desc) {
+        completionItem.documentation = new vscode.MarkdownString(expression.desc);
+      } else {
+        completionItem.documentation = new vscode.MarkdownString('Missing documentation');
+      }
 
 
       array.push(completionItem);

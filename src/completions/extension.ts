@@ -44,20 +44,27 @@ export function activate(context: vscode.ExtensionContext) {
         }
       }
 
-      if (/^GRAPH_EVAL([A-Za-z_0-9_]*)/.test(linePrefix)) {
-        console.log('GRAPH_EVAL');
-        return Graph.eval();
-
+      //🚧 should depend on if LAST_CHART_DESC is present on the same line
+      if (/chartConfig/.test(linePrefix)) {
+        console.log('chartConfig');
+        return Graph.chartConfig();
       }
 
+      //🚧 should depend on if LAST_CHART_DESC is present on the same line
+      if (/query/.test(linePrefix)) {
+        console.log('query');
+        return Graph.query();
+      }
+
+      //🚧should depend on if GRAPH_EXP is present on the same line
       if (/LAST_CHART_DESC/.test(linePrefix)) {
         console.log('GRAPH_TYPE');
         return Graph.lastChartDesc();
       }
 
-      if (/chartConfig/.test(linePrefix)) {
-        console.log('chartConfig');
-        return Graph.chartConfig();
+      if (/^GRAPH_EVAL([A-Za-z_0-9_]*)/.test(linePrefix)) {
+        console.log('GRAPH_EVAL');
+        return Graph.eval();
       }
 
       return undefined;
