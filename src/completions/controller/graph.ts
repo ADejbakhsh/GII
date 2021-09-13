@@ -45,7 +45,6 @@ export class Graph {
 
   static eval(): Array<vscode.CompletionItem> {
     const listExpressions = [
-      'GLOBAL.graphFns',
       'LAST_CHART_DESC',
       'delete',
       'for',
