@@ -38,18 +38,17 @@ export function activate(context: vscode.ExtensionContext) {
       const linePrefix = document.lineAt(position).text.substr(0, position.character);
 
       if (position.character < 11) {
-      if (/^GRAPH_EXP/.test(linePrefix)) {
-        console.log('GRAPH_EXP');
-        return await Graph.exp(document);
+        if (/^GRAPH_EXP/.test(linePrefix)) {
+          console.log('GRAPH_EXP');
+          return await Graph.exp(document);
+        }
 
       }
-
-      if (/^GRAPH_EVAL/.test(linePrefix)) {
+      if (/^GRAPH_EVAL(:|)$/.test(linePrefix)) {
         console.log('GRAPH_EVAL');
         return Graph.eval();
 
       }
-    }
 
       if (/LAST_CHART_DESC/.test(linePrefix)) {
         console.log('GRAPH_TYPE');

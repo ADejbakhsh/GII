@@ -1,6 +1,6 @@
 import path = require('path');
 import * as vscode from 'vscode';
-import last_chart_desc  from '@constante/last_chart_desc';
+import last_chart_desc from '../constante/last_chart_desc';
 
 interface listExpressionsT {
   item: string,
@@ -56,14 +56,11 @@ export class Graph {
       'setTotalExpressions',
       'setWeightExpressions'];
 
-    return Graph.completionItem(listExpressions);
+    return Graph.completionArray(listExpressions);
   }
 
   static lastChartDesc(): Array<vscode.CompletionItem> {
-    const vscC = vscode.CompletionItemKind;
-    let listExpressions = last_chart_desc;
-
-    return Graph.completionItem(listExpressions);
+    return Graph.completionItem(last_chart_desc);
   }
 
   static completionItem(listExpressions: listExpressionsT[]): vscode.CompletionItem[] {
@@ -81,4 +78,17 @@ export class Graph {
 
     return array;
   }
+
+  static completionArray(listExpressions: string[]): vscode.CompletionItem[] {
+    const array: Array<vscode.CompletionItem> = [];
+
+    listExpressions.every((expression) => {
+      const completionItem = new vscode.CompletionItem(expression);
+      completionItem.kind = vscode.CompletionItemKind.Method;
+
+      array.push(completionItem);
+      return true;
+    });
+
+    return array;  }
 }
