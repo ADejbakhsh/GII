@@ -63,6 +63,41 @@ export class Graph {
     return Graph.completionItem(last_chart_desc);
   }
 
+  static chartConfig(): Array<vscode.CompletionItem> {
+
+    const listExpressions = [
+      "anchorRadius",
+      "chartRightMargin",
+      "clipBubbles",
+      "formatnumberscale",
+      "labelDisplay",
+      "labelFontSize",
+      "legendItemFontSize",
+      "numberPrefix",
+      "pYAxisName",
+      "paletteColors",
+      "placevaluesInside",
+      "rotateValues",
+      "sFormatNumberScale",
+      "sYAxisName",
+      "showLegend",
+      "showSum",
+      "showTotal",
+      "showValues",
+      "subCaption",
+      "tabLabel",
+      "valueFontBold",
+      "valueFontSize",
+      "xAxisName",
+      "yAxisMaxValue",
+      "yAxisMinValue",
+      "yAxisName",
+      "zAxisName",
+    ];
+    return Graph.completionArray(listExpressions);
+
+  }
+
   static completionItem(listExpressions: listExpressionsT[]): vscode.CompletionItem[] {
     const array: Array<vscode.CompletionItem> = [];
 
@@ -90,5 +125,6 @@ export class Graph {
       return true;
     });
 
-    return array;  }
+    return array;
+  }
 }

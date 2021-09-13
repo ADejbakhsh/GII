@@ -42,9 +42,9 @@ export function activate(context: vscode.ExtensionContext) {
           console.log('GRAPH_EXP');
           return await Graph.exp(document);
         }
-
       }
-      if (/^GRAPH_EVAL(:|)$/.test(linePrefix)) {
+
+      if (/^GRAPH_EVAL([A-Za-z_0-9_]*)/.test(linePrefix)) {
         console.log('GRAPH_EVAL');
         return Graph.eval();
 
@@ -53,6 +53,11 @@ export function activate(context: vscode.ExtensionContext) {
       if (/LAST_CHART_DESC/.test(linePrefix)) {
         console.log('GRAPH_TYPE');
         return Graph.lastChartDesc();
+      }
+
+      if (/chartConfig/.test(linePrefix)) {
+        console.log('chartConfig');
+        return Graph.chartConfig();
       }
 
       return undefined;
