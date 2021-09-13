@@ -1,5 +1,10 @@
 Support for gii custom language
 
+
+## [0.1.3] - 13-09-2021
+- Documentation on option for graph Eval and sub choice![use case](https://raw.githubusercontent.com/ADejbakhsh/GII/last_char_desc/asset/Now%20with%20desc.gif)
+  Use <kbd>CTRL</kbd> + <kbd>SPACE</kbd> to open the option list and do it again to show documentation
+
 ## [0.1.2] - 23-08-2021
 - auto completion on graph exp from expression files
 
