@@ -26,7 +26,16 @@ const last_chat_desc: listExpressionsT[] = [
     item: 'drill', desc: ''
   },
   {
-    item: 'drillOnDim', desc: 'Passes one or two or both (etc.) information to the next graph, in that order.'
+    item: 'drillOnDim1', desc: 'Boolean Passes the first information to the next graph'
+  },
+  {
+    item: 'drillOnDim2', desc: 'Boolean Passes the seconde information to the next graph.'
+  },
+  {
+    item: 'drillOnDim12', desc: 'Boolean Passes the fist and second information to the next graph, in that order.'
+  },
+  {
+    item: 'drillOnDim123', desc: 'Boolean Passes the fist, second and third information to the next graph, in that order.'
   },
   {
     item: 'drillTrees', desc: 'drillTrees: define the type of drill-down available in this template.       See 7.9 for more info. '
