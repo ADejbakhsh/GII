@@ -1,8 +1,13 @@
 Support for gii custom language
 
 
+## [0.1.4] - 14-09-2021
+- There is now some color for GRAPH_EVAL
+![pictures of some color on GRAP_EVAL](https://raw.githubusercontent.com/ADejbakhsh/GII/master/asset/graph_eval_color.PNG)
+  
+
 ## [0.1.3] - 13-09-2021
-- Documentation on option for graph Eval and sub choice![use case](https://raw.githubusercontent.com/ADejbakhsh/GII/last_char_desc/asset/Graph_eval.gif)
+- Documentation on option for graph Eval and sub choice![gif of showing documentation](https://raw.githubusercontent.com/ADejbakhsh/GII/last_char_desc/asset/Graph_eval.gif)
   
   Use <kbd>CTRL</kbd> + <kbd>SPACE</kbd> to open the option list and do it again to show documentation
 
