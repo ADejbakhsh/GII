@@ -26,8 +26,7 @@ const query_desc: listExpressionsT[] = [
   { item: 'selectedTimeColumns', desc: undefined },
   { item: 'showRowIndex', desc: 'Boolean  \n  Show row index on table type graph.' },
   { item: 'sliding', desc: 'string y/n  \n  Enable query sliding.  \n  The period of sliding is defined in static_where.js' },
-  { item: 'sortKey', desc: 'String  \n  Change the sort key  \n  ```GRAPH_EVAL:LAST_CHART_DESC.query.sortKey="CAO_SORT";```' },
-  { item: 'target', desc: '❌Deprecated' }
+  { item: 'sortKey', desc: 'String  \n  Change the sort key  \n  ```GRAPH_EVAL:LAST_CHART_DESC.query.sortKey="CAO_SORT";```' }
 ];
 
 export default query_desc;
