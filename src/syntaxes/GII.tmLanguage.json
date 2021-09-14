@@ -6,9 +6,6 @@
       "include": "#strings"
     },
     {
-      "include": "#comment"
-    },
-    {
       "include": "#constant"
     },
     {
@@ -23,6 +20,9 @@
       "begin": "^",
       "end": "$",
       "patterns": [
+        {
+          "include": "#comment"
+        },
         {
           "include": "#graph_end"
         },
@@ -72,9 +72,6 @@
       ]
     },
     "comment": {
-      "name": "comment.block.GII",
-      "begin": "#",
-      "end": "$",
       "patterns": [
         {
           "name": "comment.block.GII",
@@ -83,12 +80,10 @@
       ]
     },
     "entity": {
-      "begin": "^",
-      "end": ":",
       "patterns": [
         {
           "name": "entity.name.function.GII",
-          "match": "GRAPH_(DESC|DIM|TYPE|EXP)"
+          "match": "GRAPH_[A-Z-a-z_]*"
         }
       ]
     },
