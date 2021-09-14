@@ -7,7 +7,7 @@ Support for gii custom language
   
 
 ## [0.1.3] - 13-09-2021
-- Documentation on option for graph Eval and sub choice![gif of showing documentation](https://raw.githubusercontent.com/ADejbakhsh/GII/last_char_desc/asset/Graph_eval.gif)
+- Documentation on option for graph Eval and sub choice![gif of showing documentation](https://raw.githubusercontent.com/ADejbakhsh/GII/master/asset/Graph_eval.gif)
   
   Use <kbd>CTRL</kbd> + <kbd>SPACE</kbd> to open the option list and do it again to show documentation
 
