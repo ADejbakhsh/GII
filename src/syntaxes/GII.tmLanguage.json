@@ -3,9 +3,6 @@
   "name": "graph.txt",
   "patterns": [
     {
-      "include": "#strings"
-    },
-    {
       "include": "#constant"
     },
     {
@@ -20,6 +17,9 @@
       "begin": "^",
       "end": "$",
       "patterns": [
+        {
+          "include": "#strings"
+        },
         {
           "include": "#comment"
         },
@@ -44,13 +44,21 @@
           "name": "entity.name.class"
         },
         "4": {
-          "name": "support.function.git-rebase"
+          "name": "entity.name.tag"
         },
         "5": {
-          "name": "support.function.git-rebase"
+          "name": "entity.name.tag"
         }
       },
-      "end": "$"
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#boolean"
+        }
+      ]
     },
     "graph_end": {
       "patterns": [
@@ -104,6 +112,10 @@
           "match": "^INDIC:"
         }
       ]
+    },
+    "boolean": {
+      "name": "markup.heading.sqdsqd",
+      "match": "\\b(true|false)\\b"
     }
   },
   "scopeName": "source.txt"
