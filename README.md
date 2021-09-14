@@ -1,11 +1,16 @@
 Support for gii custom language
 
 
+It was concieved with the github Dark default theme in mind.
+Depending on the theme, the colors may be different. Some may not appear at all.
+
+## [1.0.0] - 14-09-2021
+- Grammar highlighting is now supported to some extent
+
 ## [0.1.4] - 14-09-2021
 - There is now some color for GRAPH_EVAL
 ![pictures of some color on GRAP_EVAL](https://raw.githubusercontent.com/ADejbakhsh/GII/master/asset/graph_eval_color.PNG)
   
-
 ## [0.1.3] - 13-09-2021
 - Documentation on option for graph Eval and sub choice![gif of showing documentation](https://raw.githubusercontent.com/ADejbakhsh/GII/master/asset/Graph_eval.gif)
   
