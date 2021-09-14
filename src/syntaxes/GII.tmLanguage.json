@@ -3,31 +3,60 @@
   "name": "graph.txt",
   "patterns": [
     {
-      "include": "#keywords"
-    },
-    {
       "include": "#strings"
     },
     {
       "include": "#comment"
     },
     {
-      "include": "#entity"
-    },
-    {
       "include": "#constant"
     },
     {
       "include": "#markup"
+    },
+    {
+      "include": "#graph_line"
     }
   ],
   "repository": {
-    "keywords": {
-      "name": "keyword.control.gii",
+    "graph_line": {
+      "begin": "^",
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#graph_end"
+        },
+        {
+          "include": "#GRAPH_EVAL"
+        },
+        {
+          "include": "#entity"
+        }
+      ]
+    },
+    "GRAPH_EVAL": {
+      "begin": "(^GRAPH_EVAL)(:([A-Za-z_]*)\\.?([A-Za-z_]*)?\\.?([A-Za-z_]*)?)?",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.function.GII"
+        },
+        "3": {
+          "name": "entity.name.class"
+        },
+        "4": {
+          "name": "support.function.git-rebase"
+        },
+        "5": {
+          "name": "support.function.git-rebase"
+        }
+      },
+      "end": "$"
+    },
+    "graph_end": {
       "patterns": [
         {
           "name": "keyword.control.gii",
-          "match": "\\b(GRAPH|END)\\b"
+          "match": "^\\b(GRAPH|END)\\b"
         }
       ]
     },
@@ -54,11 +83,12 @@
       ]
     },
     "entity": {
-      "name": "entity.name.function.GII",
+      "begin": "^",
+      "end": ":",
       "patterns": [
         {
           "name": "entity.name.function.GII",
-          "match": "^GRAPH_[a-zA-Z]{0,}"
+          "match": "GRAPH_(DESC|DIM|TYPE|EXP)"
         }
       ]
     },
