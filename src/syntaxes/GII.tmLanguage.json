@@ -114,7 +114,7 @@
       ]
     },
     "boolean": {
-      "name": "markup.heading.sqdsqd",
+      "name": "support.constant",
       "match": "\\b(true|false)\\b"
     }
   },
